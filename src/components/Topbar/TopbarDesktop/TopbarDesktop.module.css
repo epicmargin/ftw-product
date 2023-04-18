@@ -4,7 +4,7 @@
 .root {
   /* Size */
   width: 100%;
-  height: var(--topbarHeightDesktop);
+  height: 90px;
 
   /* Layout for child components */
   display: flex;
@@ -34,7 +34,7 @@
   height: 100%;
 
   @media (--viewportLarge) {
-    padding: 21px 36px 21px 36px;
+    padding: 10px 36px 10px 36px;
   }
 }
 .logoLink:hover {
@@ -45,7 +45,7 @@
 
 .logo {
   /* If height is increased, change link paddings accordingly */
-  height: 27px;
+  height: 50px;
 
   /* Good aspect ratio should be less than 160/27 (width/height) */
   /* NOTE: extremely wide logos, need special handling. */
@@ -53,6 +53,12 @@
   max-width: 220px;
   object-fit: contain;
   object-position: left center;
+
+  @media (--viewportLarge) /* Peter added it */
+  {
+    height: 70px;
+  }
+
 }
 
 /* Search */
@@ -79,13 +85,14 @@
   display: inline-block;
   margin: 28px 0;
   text-decoration: inherit;
-
+ 
   @media (--viewportMedium) {
     font-weight: var(--fontWeightMedium);
   }
 }
 
 .topbarSearchWithLeftPadding {
+  padding-top: 8px;
   padding-left: 24px;
   height: var(--topbarHeightDesktop);
 
@@ -131,7 +138,7 @@
   text-decoration: inherit;
 
   @media (--viewportMedium) {
-    margin: 28px 0;
+    margin: 37px 0;
   }
 }
 
@@ -293,7 +300,7 @@
   text-decoration: inherit;
 
   @media (--viewportMedium) {
-    margin: 28px 0;
+    margin: 37px 0;
   }
 }
 
@@ -358,7 +365,7 @@
   padding: 20px 24px;
 
   /* Layout details */
-  color: var(--matterColorAnti);
+  color: var(--marketplaceColor);
   text-align: left;
   white-space: nowrap;
   transition: var(--transitionStyleButton);
