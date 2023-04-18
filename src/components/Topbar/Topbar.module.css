@@ -11,7 +11,7 @@
 .container {
   /* Size */
   width: 100%;
-  height: var(--topbarHeight);
+  height: 80px;
 
   /* Layout for child components */
   display: flex;
@@ -38,7 +38,10 @@
 }
 
 .logo {
-  object-fit: contain;
+  /*object-fit: contain;*/
+  position: relative;
+  top: 15px;
+  height: 60px;
 }
 
 .logoutButton {
@@ -50,7 +53,7 @@
 .searchMenu {
   /* Font */
   composes: h5 from global;
-  color: var(--matterColor);
+  color: #ffffff;
 
   /* Layout */
   display: flex;
@@ -146,7 +149,7 @@
 }
 
 .mobileHelp {
-  color: var(--matterColorAnti);
+  color: var(--marketplaceColor);
   margin: 0 24px;
 
   /* Absolute position to avoid affecting the layout of the autocomplete
