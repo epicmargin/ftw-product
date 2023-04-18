@@ -8,7 +8,7 @@
 
   width: 100%;
   padding: 24px 24px 42px 24px;
-  background-color: var(--matterColorBright);
+  background-color: #acacac;
   position: relative;
 
   @media (--viewportMedium) {
@@ -122,7 +122,7 @@
   object-fit: contain;
   object-position: left center;
   width: 100%;
-  height: 27px;
+  height: 47px;
 }
 
 .organizationInfo {
@@ -130,15 +130,17 @@
 
 .organizationDescription,
 .organizationCopyright {
-  composes: marketplaceTinyFontStyles from global;
+  /*composes: marketplaceTinyFontStyles from global;*/
+  color: var(--marketplaceColor);
 }
 
 .organizationCopyright {
+  color: var(--marketplaceColor);
   margin-top: 24px;
 }
 
 .copyrightLink {
-  color: var(--matterColor);
+  color: var(--marketplaceColor);
   transition: var(--transitionStyleButton);
 
   &:hover {
@@ -249,6 +251,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+ 
 }
 
 .tosAndPrivacy {
@@ -265,7 +268,7 @@
 .terms {
   /* Font */
   composes: marketplaceTinyFontStyles from global;
-  color: var(--matterColorAnti);
+  color: var(--marketplaceColor);
   transition: var(--transitionStyleButton);
 
   margin-top: 0;
@@ -309,7 +312,7 @@
 .organizationCopyrightMobile {
   /* Font */
   composes: marketplaceTinyFontStyles from global;
-  color: var(--matterColorAnti);
+  color: var(--marketplaceColor);
   transition: var(--transitionStyleButton);
 
   /* Tell parent component how much space this one prefers */
