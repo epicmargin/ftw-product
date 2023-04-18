@@ -2,16 +2,22 @@
 }
 
 .input {
+  background-color: #ffffff;
   border-bottom-color: var(--attentionColor);
+  padding: 5px;
+  color: #000000;
 }
 
 .inputSuccess {
+  background-color: #ffffff;
   border-bottom-color: var(--successColor);
 }
 
 .inputError {
+  background-color: #ffffff;
   border-bottom-color: var(--failColor);
 }
 
 .textarea {
+  background-color: #ffffff;
 }
