@@ -162,7 +162,7 @@
 .clearButton {
   composes: h5 from global;
   font-weight: var(--fontWeightMedium);
-  color: var(--matterColorAnti);
+  color: #ffffff;
 
   display: block;
   margin: 12px 0 0 0;

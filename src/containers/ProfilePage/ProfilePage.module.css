@@ -20,23 +20,40 @@
 }
 
 .asideContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid var(--matterColorNegative);
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*flex-direction: row;
+  border-bottom: 1px solid var(--matterColorNegative);*/
 
   @media (--viewportLarge) {
     flex-direction: column;
     border-bottom: none;
+    
   }
 }
+
+
+
+.cover {
+  display:block;
+  position:relative;
+  overflow:hidden;
+  z-index:1;
+}
+.cover img {
+  max-width:100%;
+  z-index:1;
+}
+
 
 .avatar {
   margin: 30px 26px 29px 0;
   flex-shrink: 0;
 
   @media (--viewportLarge) {
-    margin: 0 96px 44px 0;
+    margin: 0 auto;
   }
 }
 
@@ -60,6 +77,7 @@
 
   @media (--viewportMedium) {
     margin-top: 20px;
+    
   }
   @media (--viewportLarge) {
     display: none;
@@ -83,17 +101,76 @@
   }
 }
 
+.profileBox
+{
+  background-color:#F1A258;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+
+  @media (--viewportLarge) {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.profileBox .artistName
+{
+  font-size: 24px;
+}
+
+.profileBox .location
+{
+  color: #000000;
+  font-weight: bold;
+}
+
+.identityBox hr{
+  width:70%;
+  border-top: 1px solid #ffffff;
+}
+
+.linkArea
+{
+  @media (--viewportLarge) {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.linkBox
+{
+        background-color: #F1A258;
+        border: none;
+        color: white;
+        padding: 16px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: calc(50% - 4px);
+        margin: 0 auto;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+
+
+
+
 .bio {
   /* Preserve newlines, but collapse other whitespace */
   white-space: pre-line;
   margin: 5px 0 24px 0;
+  font-size:12px;
+ 
 
   @media (--viewportMedium) {
     margin: 4px 0 51px 0;
   }
   @media (--viewportLarge) {
     margin: 0 0 56px 0;
-    max-width: 600px;
+    
   }
 }
 

@@ -48,7 +48,7 @@ export class ProfileSettingsPageComponent extends Component {
     } = this.props;
 
     const handleSubmit = values => {
-      const { firstName, lastName, bio: rawBio } = values;
+      const { firstName, lastName, bio: rawBio, website, instagram, linkedin, dribbble, hometowncity, hometownstate, profiletitle    } = values;
 
       // Ensure that the optional bio is a string
       const bio = rawBio || '';
@@ -57,6 +57,15 @@ export class ProfileSettingsPageComponent extends Component {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
         bio,
+        publicData:{
+          website,
+          instagram,
+          linkedin,
+          dribbble,
+          hometowncity,
+          hometownstate,
+          profiletitle,
+        }
       };
       const uploadedImage = this.props.image;
 
@@ -71,6 +80,7 @@ export class ProfileSettingsPageComponent extends Component {
 
     const user = ensureCurrentUser(currentUser);
     const { firstName, lastName, bio } = user.attributes.profile;
+    const { website, instagram, linkedin, dribbble, hometowncity, hometownstate, profiletitle } = user.attributes.profile.publicData;
     const profileImageId = user.profileImage ? user.profileImage.id : null;
     const profileImage = image || { imageId: profileImageId };
 
@@ -78,7 +88,7 @@ export class ProfileSettingsPageComponent extends Component {
       <ProfileSettingsForm
         className={css.form}
         currentUser={currentUser}
-        initialValues={{ firstName, lastName, bio, profileImage: user.profileImage }}
+        initialValues={{ firstName, lastName, bio, website, instagram, linkedin, dribbble, hometowncity, hometownstate, profiletitle, profileImage: user.profileImage }}
         profileImage={profileImage}
         onImageUpload={e => onImageUploadHandler(e, onImageUpload)}
         uploadInProgress={uploadInProgress}

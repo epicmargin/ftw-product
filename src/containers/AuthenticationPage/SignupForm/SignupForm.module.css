@@ -41,11 +41,14 @@
 }
 
 .termsText {
-  composes: marketplaceModalHelperText from global;
+  /*composes: marketplaceModalHelperText from global;*/
+  color: #ffffff;
 }
 
 .termsLink {
-  composes: marketplaceModalHelperLink from global;
+  /*composes: marketplaceModalHelperLink from global;*/
+  color: #ffffff;
+  text-decoration: underline;
 
   &:hover {
     text-decoration: underline;

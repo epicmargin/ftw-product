@@ -32,10 +32,11 @@
   flex-direction: row;
   padding: 0;
   flex-shrink: 0;
-  background-color: var(--matterColorLight);
+  background-color: var(--matterColorBright);
   box-shadow: var(--boxShadowLight);
   border-top: 1px solid var(--matterColorNegative);
   overflow-x: scroll;
+  
 
   @media (--viewportLarge) {
     padding: 128px 0 82px 36px;

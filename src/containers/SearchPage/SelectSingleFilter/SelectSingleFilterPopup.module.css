@@ -101,7 +101,7 @@
 .clearMenuItem {
   composes: h4 from global;
   font-weight: var(--fontWeightMedium);
-  color: var(--matterColorAnti);
+ 
 
   /* Layout */
   position: relative;

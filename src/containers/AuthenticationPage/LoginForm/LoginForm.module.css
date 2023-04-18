@@ -24,9 +24,13 @@
 }
 
 .recoveryLink {
-  composes: marketplaceModalHelperLink from global;
+  /*composes: marketplaceModalHelperLink from global;*/
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .recoveryLinkInfo {
-  composes: marketplaceModalHelperText from global;
+  /*composes: marketplaceModalHelperText from global;*/
+  color: #ffffff;
+  
 }

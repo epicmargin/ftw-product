@@ -103,7 +103,7 @@
 .resetAllButton {
   composes: h5 from global;
   font-weight: var(--fontWeightMedium);
-  color: var(--matterColorAnti);
+  color: #ffffff;
 
   /* Layout */
   display: inline;
@@ -148,7 +148,7 @@
      * and left padding together with border should be 60px.
      */
     padding: 24px 24px 0 24px;
-    background-color: var(--matterColorLight);
+    background-color: var(--matterColorBright);
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: var(--matterColorNegative);

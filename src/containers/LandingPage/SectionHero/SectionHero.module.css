@@ -64,7 +64,7 @@
 
 .heroMainTitle {
   composes: marketplaceHeroTitleFontStyles from global;
-  color: var(--matterColorLight);
+  color: var(--marketplaceColor);
   composes: animation;
 
   @media (--viewportMedium) {
@@ -78,7 +78,7 @@
 .heroSubTitle {
   composes: h4 from global;
 
-  color: var(--matterColorLight);
+  color: var(--marketplaceColor);
   margin: 0 0 32px 0;
   composes: animation;
 
@@ -102,4 +102,6 @@
 }
 .heroButtonFEDelay {
   animation-delay: 0.3s;
+  background-color: var(--marketplaceColorLight);
+  color: var(--marketplaceColor);
 }

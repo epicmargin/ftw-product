@@ -98,6 +98,34 @@ class ProfileSettingsFormComponent extends Component {
           });
           const lastNameRequired = validators.required(lastNameRequiredMessage);
 
+
+
+          // hometown City
+          const hometownCityLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.hometownCityLabel',
+          });
+          const hometownCityPlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.hometownCityPlaceholder',
+          });
+         
+
+          // hometown State
+          const hometownStateLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.hometownStateLabel',
+          });
+          const hometownStatePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.hometownStatePlaceholder',
+          });
+          
+          // Profile Title
+          const profileTitleLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.profileTitleLabel',
+          });
+          const profileTitlePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.profileTitlePlaceholder',
+          });
+
+
           // Bio
           const bioLabel = intl.formatMessage({
             id: 'ProfileSettingsForm.bioLabel',
@@ -105,6 +133,38 @@ class ProfileSettingsFormComponent extends Component {
           const bioPlaceholder = intl.formatMessage({
             id: 'ProfileSettingsForm.bioPlaceholder',
           });
+
+           // Website
+           const websiteLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.websiteLabel',
+          });
+          const websitePlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.websitePlaceholder',
+          });
+
+           // Instagram
+           const instagramLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.instagramLabel',
+          });
+          const instagramPlaceholder = intl.formatMessage({
+            id: 'ProfileSettingsForm.instagramPlaceholder',
+          });
+
+            // LinkedIn
+            const linkedinLabel = intl.formatMessage({
+              id: 'ProfileSettingsForm.linkedinLabel',
+            });
+            const linkedinPlaceholder = intl.formatMessage({
+              id: 'ProfileSettingsForm.linkedinPlaceholder',
+            });
+
+            // Dribbble
+            const dribbbleLabel = intl.formatMessage({
+              id: 'ProfileSettingsForm.dribbbleLabel',
+            });
+            const dribbblePlaceholder = intl.formatMessage({
+              id: 'ProfileSettingsForm.dribbblePlaceholder',
+            });
 
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
@@ -134,7 +194,6 @@ class ProfileSettingsFormComponent extends Component {
                 {uploadingOverlay}
               </ImageFromFile>
             ) : null;
-
           // Avatar is rendered in hidden during the upload delay
           // Upload delay smoothes image change process:
           // responsive img has time to load srcset stuff before it is shown to user.
@@ -286,10 +345,42 @@ class ProfileSettingsFormComponent extends Component {
                   />
                 </div>
               </div>
-              <div className={classNames(css.sectionContainer, css.lastSection)}>
+
+              <div className={css.sectionContainer}>
+                <h3 className={css.sectionTitle}>
+                  <FormattedMessage id="ProfileSettingsForm.hometownHeading" />
+                </h3>
+                <div className={css.nameContainer}>
+                  <FieldTextInput
+                    className={css.hometownCity}
+                    type="text"
+                    id="hometowncity"
+                    name="hometowncity"
+                    label={hometownCityLabel}
+                    placeholder={hometownCityPlaceholder}
+                  />
+                   <FieldTextInput
+                    className={css.hometownState}
+                    type="text"
+                    id="hometownstate"
+                    name="hometownstate"
+                    label={hometownStateLabel}
+                    placeholder={hometownStatePlaceholder}
+                  />
+                </div>
+              </div>
+              <div className={classNames(css.sectionContainer)}>
                 <h3 className={css.sectionTitle}>
                   <FormattedMessage id="ProfileSettingsForm.bioHeading" />
                 </h3>
+                <FieldTextInput
+                  type="textarea"
+                  id="profiletitle"
+                  name="profiletitle"
+                  label={profileTitleLabel}
+                  placeholder={profileTitlePlaceholder}
+                />
+                <p/>
                 <FieldTextInput
                   type="textarea"
                   id="bio"
@@ -301,6 +392,46 @@ class ProfileSettingsFormComponent extends Component {
                   <FormattedMessage id="ProfileSettingsForm.bioInfo" />
                 </p>
               </div>
+              <div className={classNames(css.sectionContainer, css.lastSection)}>
+                <h3 className={css.sectionTitle}>
+                  <FormattedMessage id="ProfileSettingsForm.websiteHeading" />
+                </h3>
+                <FieldTextInput
+                  type="textarea"
+                  id="instagram"
+                  name="instagram"
+                  label={instagramLabel}
+                  placeholder={instagramPlaceholder}
+                />
+                <p/>
+                <FieldTextInput
+                  type="textarea"
+                  id="linkedin"
+                  name="linkedin"
+                  label={linkedinLabel}
+                  placeholder={linkedinPlaceholder}
+                />
+                <p/>
+                <FieldTextInput
+                  type="textarea"
+                  id="dribbble"
+                  name="dribbble"
+                  label={dribbbleLabel}
+                  placeholder={dribbblePlaceholder}
+                />
+                <p/>
+                <FieldTextInput
+                  type="textarea"
+                  id="website"
+                  name="website"
+                  label={websiteLabel}
+                  placeholder={websitePlaceholder}
+                />
+                
+                 
+               
+              </div>
+              
               {submitError}
               <Button
                 className={css.submitButton}

@@ -15,7 +15,6 @@ import {
   Page,
   LayoutSideNavigation,
   LayoutWrapperMain,
-  LayoutWrapperSideNav,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
@@ -74,9 +73,20 @@ export class ProfilePageComponent extends Component {
     const profileUser = ensureUser(user);
     const isCurrentUser =
       ensuredCurrentUser.id && profileUser.id && ensuredCurrentUser.id.uuid === profileUser.id.uuid;
-    const displayName = profileUser.attributes.profile.displayName;
+    const displayName = profileUser.attributes.profile.displayName;    
     const bio = profileUser.attributes.profile.bio;
+    const website = profileUser.attributes.profile.publicData.website;
+    const instagram = profileUser.attributes.profile.publicData.instagram;
+    const linkedin = profileUser.attributes.profile.publicData.linkedin;
+    const dribbble = profileUser.attributes.profile.publicData.dribbble;
+    const hometowncity = profileUser.attributes.profile.publicData.hometowncity;
+    const hometownstate = profileUser.attributes.profile.publicData.hometownstate;
+    const profiletitle = profileUser.attributes.profile.publicData.profiletitle;
     const hasBio = !!bio;
+    const hasWebsite = !!website;
+    const hasInstagram = !!instagram;
+    const hasLinkedin = !!linkedin;
+    const hasDribbble = !!dribbble;
     const hasListings = listings.length > 0;
     const isMobileLayout = viewport.width < MAX_MOBILE_SCREEN_WIDTH;
 
@@ -93,12 +103,10 @@ export class ProfilePageComponent extends Component {
 
     const asideContent = (
       <div className={css.asideContent}>
+       
+        
         <AvatarLarge className={css.avatar} user={user} disableProfileLink />
-        <h1 className={css.mobileHeading}>
-          {displayName ? (
-            <FormattedMessage id="ProfilePage.mobileHeading" values={{ name: displayName }} />
-          ) : null}
-        </h1>
+        
         {editLinkMobile}
         {editLinkDesktop}
       </div>
@@ -107,6 +115,8 @@ export class ProfilePageComponent extends Component {
     const listingsContainerClasses = classNames(css.listingsContainer, {
       [css.withBioMissingAbove]: !hasBio,
     });
+
+    
 
     const reviewsError = (
       <p className={css.error}>
@@ -184,10 +194,29 @@ export class ProfilePageComponent extends Component {
 
     const mainContent = (
       <div>
-        <h1 className={css.desktopHeading}>
-          <FormattedMessage id="ProfilePage.desktopHeading" values={{ name: displayName }} />
-        </h1>
+        
+        <div className={css.profileBox}>
+       
+        <div className={css.identityBox}>
+        <p className={css.artistName}><FormattedMessage id="ProfilePage.mobileHeading" values={{ name: displayName }} /></p>
+        <p  className={css.location}>{hometowncity}, {hometownstate}</p>
+        <hr/>
+        <span>{profiletitle}</span>
+        <hr/>
+        </div>
+       
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
+
+        </div>
+        <div className={css.linkArea}>
+        <p/>
+        {hasInstagram ? <a className={css.linkBox} href={instagram} target="_blank">Instagram</a> : null} 
+        {hasLinkedin ? <a className={css.linkBox} href={linkedin} target="_blank">LinkedIn</a> : null}
+        {hasDribbble ? <a className={css.linkBox} href={dribbble} target="_blank">Dribbble</a> : null}
+        {hasWebsite? <a className={css.linkBox} href={website} target="_blank">Web</a> : null}
+        <p/>
+        </div>
+
         {hasListings ? (
           <div className={listingsContainerClasses}>
             <h2 className={css.listingsTitle}>
@@ -247,8 +276,7 @@ export class ProfilePageComponent extends Component {
           <LayoutWrapperTopbar>
             <TopbarContainer currentPage="ProfilePage" />
           </LayoutWrapperTopbar>
-          <LayoutWrapperSideNav className={css.aside}>{asideContent}</LayoutWrapperSideNav>
-          <LayoutWrapperMain>{content}</LayoutWrapperMain>
+          <LayoutWrapperMain>{asideContent}{content}</LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />
           </LayoutWrapperFooter>

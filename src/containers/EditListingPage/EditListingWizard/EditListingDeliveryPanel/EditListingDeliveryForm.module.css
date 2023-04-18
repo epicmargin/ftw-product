@@ -10,6 +10,8 @@
   flex: 1;
   flex-direction: column;
 
+ 
+
   @media (--viewportMedium) {
     padding-top: 2px;
   }
@@ -85,10 +87,16 @@
 .input {
   flex-shrink: 0;
   margin-bottom: 24px;
+  color: #ffffff;
 
   @media (--viewportMedium) {
     margin-bottom: 32px;
   }
+}
+
+.label
+{
+  color: #ffffff;
 }
 
 .submitButton {

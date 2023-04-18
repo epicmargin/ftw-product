@@ -6,6 +6,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  background-color: var(--matterColorBright);
 }
 
 .form {

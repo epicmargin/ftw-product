@@ -15,13 +15,16 @@
 
 :root {
   /* ================ Colors ================ */
+  /* -- #F1A258 orange ---*/
 
-  --marketplaceColor: #5d2bc0; /* hsl(260, 63%, 46%) */
-  --marketplaceColorLight: #7748d5; /* hsl(260, 63%, 56%), +10L from marketplaceColor */
-  --marketplaceColorDark: #34196c; /* hsl(260, 63%, 26%), -20L from marketplaceColor */
+  --marketplaceColor: #ffffff;
+  --marketplaceColorLight: #F1A258; /* hsl(260, 63%, 56%), +10L from marketplaceColor */
+  --marketplaceColorDark: #000000; /* hsl(260, 63%, 26%), -20L from marketplaceColor */
+
+
 
   /* Used with inline CSS SVGs */
-  --marketplaceColorEncoded: %23a02cbf;
+  --marketplaceColorEncoded: #a02cbf;
 
   --successColor: #2ecc71;
   --successColorDark: #239954;
@@ -34,12 +37,11 @@
   --bannedColorDark: var(--marketplaceColor);
 
   --matterColorDark: #000000;
-  --matterColorAlmostDark: #1d1d1f;
-  --matterColor: #4a4a4a;
+  --matterColor: #ffffff;
   --matterColorAnti: #b2b2b2;
   --matterColorNegative: #e7e7e7;
-  --matterColorBright: #fcfcfc;
-  --matterColorLight: #ffffff;
+  --matterColorBright: #DFC7B2; /*peter*/
+  --matterColorLight: #9AB1A7; /*peter*/
 
   --matterColorLightTransparent: rgba(255, 255, 255, 0.65);
 
@@ -53,9 +55,7 @@
 
   --fontWeightHighlightEmail: var(--fontWeightBold);
 
-  /* ================ Spacing units ================ */
-
-  --contentMaxWidth: 1264px; /* calc(Global width (1200px) + (Horizontal padding (32px) * 2) */
+  /* ================ Spacing unites ================ */
 
   /* Multiples of mobile and desktop spacing units should be used with margins and paddings. */
   --spacingUnit: 6px;
@@ -98,12 +98,12 @@
 
   /* ================ Topbar related ================ */
 
-  --topbarHeight: 60px;
+  --topbarHeight: 110px;
   --topbarHeightDesktop: 72px;
 
   --TopbarMobileMenu_topMargin: 96px;
 
-  --Topbar_logoHeight: 25px;
+  --Topbar_logoHeight: 95px;
   --CheckoutPage_logoHeight: 25px;
   --CheckoutPage_logoHeightDesktop: 27px;
 
@@ -136,6 +136,11 @@
   /* ================ TabNav ================ */
   --TabNav_linkWidth: 240px;
 
+  /* ================ LandingPage ================ */
+  --LandingPage_sectionMarginTop: 40px;
+  --LandingPage_sectionMarginTopMedium: 60px;
+  --LandingPage_sectionMarginTopLarge: 94px;
+
   /* ================ EditListingAvailabilityForm, ManageAvailabilityCalendar ================ */
   --ManageAvailabilityCalendar_gridColor: #e0e0e0;
   --ManageAvailabilityCalendar_availableColor: #ffffff;
@@ -149,10 +154,6 @@
   /* ================ ProfileSettingsForm ================ */
   --ProfileSettingsForm_avatarSize: 96px;
   --ProfileSettingsForm_avatarSizeDesktop: 240px;
-
-  /* ================ PageBuilder ================ */
-  /* --carouselWidth will be updated dynamically through JS */
-  --carouselWidth: 100vw;
 }
 
 /* ================ Global element styles ================ */
@@ -357,11 +358,6 @@ html {
   color: var(--matterColor);
   padding: 0;
   margin: 0;
-  scroll-padding-top: calc(var(--topbarHeight) + 1px);
-
-  @media (--viewportMedium) {
-    scroll-padding-top: calc(var(--topbarHeightDesktop) + 1px);
-  }
 }
 
 ul {
@@ -773,23 +769,24 @@ textarea {
   background-color: var(--marketplaceColorDark);
 }
 .buttonColors:disabled {
-  background-color: var(--matterColorNegative);
-  color: var(--matterColorLight);
+  background-color: var(--marketplaceColorLight);
+  /*background-color: var(--matterColorNegative);*/
+  color: var(--marketplaceColor);
 }
 
 /* Button colors: primary */
 .buttonColorsPrimary {
-  background-color: var(--successColor);
-  color: var(--matterColorLight);
+  background-color: var(--marketplaceColorLight);
+  color: var(--marketplaceColor);
 }
 .buttonColorsPrimary:hover,
 .buttonColorsPrimary:focus {
-  background-color: var(--successColorDark);
-  color: var(--matterColorLight);
+  background-color: var(--marketplaceColorLight);
+  color: var(--marketplaceColor);
 }
 .buttonColorsPrimary:disabled {
-  background-color: var(--matterColorNegative);
-  color: var(--matterColorLight);
+  background-color: var(--marketplaceColorLight);
+  color: var(--marketplaceColor));
 }
 
 /* Button colors: secondary */
@@ -836,7 +833,7 @@ textarea {
   flex-direction: column;
   padding: var(--modalPadding);
 
-  background-color: var(--matterColorLight);
+  background-color: var(--matterColorBright);
   border-radius: var(--borderRadius);
   border-bottom: none;
 
@@ -847,7 +844,7 @@ textarea {
     padding: var(--modalPaddingMedium);
     margin-top: 12.5vh;
     margin-bottom: 12.5vh;
-    border-bottom: 8px solid var(--marketplaceColor);
+    /*border-bottom: 8px solid var(--marketplaceColor);*/
   }
 }
 

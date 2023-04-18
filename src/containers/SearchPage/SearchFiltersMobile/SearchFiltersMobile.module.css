@@ -95,7 +95,7 @@
 .resetAllButton {
   composes: h5 from global;
   font-weight: var(--fontWeightMedium);
-  color: var(--matterColorAnti);
+  color: #ffffff;
 
   /* Layout */
   display: inline;
