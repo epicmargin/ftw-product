@@ -1,7 +1,10 @@
 @import '../../../styles/customMediaQueries.css';
 
 .mobileInputRoot {
+
   width: 100%;
+
+
 }
 
 .desktopInputRoot {
@@ -21,6 +24,8 @@
   background-color: var(--matterColorLight);
 }
 
+
+
 .mobileInput {
   flex-grow: 1;
 
@@ -39,6 +44,7 @@
   /* Safari bugfix: without this Safari will print placeholder to a wrong place */
   &::-webkit-input-placeholder {
     line-height: normal;
+    color: white !important;
   }
 
   &:hover,
@@ -46,6 +52,8 @@
     border-bottom-color: var(--marketplaceColor);
     outline: none;
   }
+
+
 }
 
 .desktopIcon {
@@ -87,6 +95,7 @@
 
   /* Placeholder text might be too wide */
   &::placeholder {
+    color: #ffffff;
     text-overflow: ellipsis;
     overflow-x: hidden;
     font-weight: var(--fontWeightMedium);

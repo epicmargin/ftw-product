@@ -10,12 +10,14 @@
 
 .root {
   composes: marketplaceModalRootStyles from global;
-  composes: defaultBackgroundImageForDesktop from global;
+  /*composes: defaultBackgroundImageForDesktop from global;*/
 }
 
 .content {
-  composes: marketplaceModalBaseStyles from global;
-  padding-top: 29px;
+  /*composes: marketplaceModalBaseStyles from global;*/
+  padding-top: 69px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* ================ Tabs & Form ================ */
@@ -147,12 +149,15 @@
 /* Helper links */
 .modalHelperLink {
   composes: a from global;
-  composes: marketplaceModalHelperLink from global;
+  /*composes: marketplaceModalHelperLink from global;*/
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Helper texts for the links, not the actual links */
 .modalHelperText {
-  composes: marketplaceModalHelperText from global;
+  /*composes: marketplaceModalHelperText from global;*/
+  color: #ffffff;
 }
 
 .modalIcon {
