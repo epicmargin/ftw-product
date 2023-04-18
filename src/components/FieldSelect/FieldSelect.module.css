@@ -2,12 +2,12 @@
 }
 
 .select {
-  color: var(--matterColorAnti);
+  color: #000000;
   border-bottom-color: var(--attentionColor);
   padding-right: 20px;
 
   & > option {
-    color: var(--matterColor);
+    color: #000000;
   }
   & > option:disabled {
     color: var(--matterColorAnti);
@@ -15,7 +15,7 @@
 }
 
 .selectSuccess {
-  color: var(--matterColor);
+  color: #000000;
   border-bottom-color: var(--successColor);
 }
 
